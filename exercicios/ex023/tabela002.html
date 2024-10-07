@@ -12,11 +12,18 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
 
         td, th {
             border: 1px solid black;
             padding: 10px;
+        }
+        
+
+        th#tema {
+           background-color: rgba(0, 0, 0, 0.829);
+           color: white;
         }
 
         thead, tfoot {
@@ -24,8 +31,18 @@
             color: white;
         }
 
+        thead > tr > th {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.829);
+        }
+
         td.num {
             text-align: right;
+        }
+
+        tbody > tr:nth-child(even) {
+            background-color: lightgrey;
         }
 
         caption {
@@ -43,8 +60,8 @@
     <table>
         <caption>População das Unidades Federativas</caption>
             <tr>
-                <th scope="col">Estado</th>
-                <th scope="col" style="width: 50px;">População</th>
+                <th scope="col" id="tema">Estado</th>
+                <th scope="col" style="width: 50px;" id="tema">População</th>
             </tr>
         </thead>
         <tbody>
@@ -80,5 +97,6 @@
             </tr>
         </tfoot>
     </table>
+    
 </body>
 </html>
